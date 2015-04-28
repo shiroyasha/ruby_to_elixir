@@ -29,25 +29,46 @@
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
 
+    <link href='http://fonts.googleapis.com/css?family=Lobster+Two:400,700,700italic,400italic' rel='stylesheet' type='text/css'>
+
+    <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700' rel='stylesheet' type='text/css'>
+
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
+
     <style>
       html body {
-        background: url("background.jpg");
-        background-position: center;
-        background-size: 100%;
-        background-repeat: no-repeat;
         background-color: black;
       }
 
-      .reveal h1 {
-        font-family: monospace;
+      .reveal h1, .reveal h3 {
+        font-family: "Yanone Kaffeesatz";
         font-weight: 800;
         font-size: 5em;
+        margin: 0;
+        padding: 0;
+        text-transform: uppercase;
+      }
+
+      .reveal h3 {
+        font-size: 2em;
       }
 
       .reveal h2 {
-        font-family: monospace;
+        font-family: "Lobster Two";
         font-weight: 800;
-        font-size: 3em;
+        font-size: 2em;
+        text-transform: none;
+        line-height: 0;
+        margin: 0;
+        padding: 0;
+        color: orange;
+      }
+      
+      .reveal p.rules {
+        font-family: "Yanone Kaffeesatz";
+        font-weight: 800;
+        font-size: 5em;
+        text-transform: uppercase;
       }
 
       .reveal a {
@@ -56,6 +77,37 @@
 
       .reveal section img {
         border: none;
+        background: none;
+        box-shadow: none;
+      }
+
+      .reveal code {
+        font-family: "Droid Sans Mono";
+      }
+
+      .reveal span.http-pipe {
+        text-transform: uppercase;
+        font-family: "Yanone Kaffeesatz";
+        font-weight: 800;
+        font-size: 100px;
+        vertical-align: middle;
+        padding: 0 55px;
+        width: 600px;
+      }
+
+      .blink {
+        -webkit-animation: blinker 0.5s linear infinite alternate;
+        -moz-animation: blinker 0.5s linear infinite alternate;
+      }
+
+      @-webkit-keyframes blinker {  
+          from { opacity: 1; }
+            to { opacity: 0; }
+      }
+
+      @-moz-keyframes blinker {  
+          from { opacity: 1; }
+            to { opacity: 0; }
       }
     </style>
 
@@ -71,11 +123,37 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
+					<h2>Introduction to</h2>
 					<h1>WebHooks</h1>
 				</section>
 
 				<section>
-          <img data-width="600" data-src="EricSRaymond.jpg">
+          <img width="300" data-src="EricSRaymond.jpg">
+					<h3>Unix Philosophy</h3>
+				</section>
+
+				<section>
+				  <p class="fragment rules">Rule Of Separation</p>
+          <code><span style="color: yellowgreen;">curl</span> "http://021.rs" | <span style="color: yellowgreen;">grep</span> "Rendered Text"</code>
+				  <p class="fragment rules">Rule Of Composition</p>
+				</section>
+
+				<section data-transition="none" data-background="#ffffff">
+          <img class="fragment" data-fragment-index="1" style="vertical-align: middle;" width=250 src="octocat.png">
+          
+				  <span class="fragment fade-in" data-fragment-index="3">
+            <span class="fragment fade-out http-pipe blink" data-fragment-index="4">⟻  http  ⟼ </span>
+          </span>
+
+				  <span class="fragment fade-in" data-fragment-index="4">
+            <span class="fragment fade-out http-pipe" data-fragment-index="5">POST "I have a new commit" ⟼ </span>
+          </span>
+
+				  <span class="fragment fade-in" data-fragment-index="5">
+            <span class="fragment fade-out http-pipe" data-fragment-index="6">⟻  GET "Let me see"</span>
+          </span>
+
+          <img class="fragment" data-fragment-index="2" style="vertical-align: middle;" width=200 src="semaphore.png">
 				</section>
 
 				<!-- Example of nested vertical slides -->
@@ -411,6 +489,8 @@ Reveal.addEventListener( 'customevent', function() {
 				progress: false,
 				history: false,
 				center: true,
+        width: 1200,
+        height: 700,
 
 				transition: 'slide', // none/fade/slide/convex/concave/zoom
 
