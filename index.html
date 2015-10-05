@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Webhooks</title>
+		<title>The story of Process Isolation</title>
 
 		<meta name="description" content="Process isolation presentation">
 		<meta name="author" content="Igor Sarcevic">
@@ -40,7 +40,7 @@
         background-color: black;
       }
 
-      .reveal h1, .reveal h3 {
+      .reveal h1, .reveal h3, .reveal h4 {
         font-family: "Yanone Kaffeesatz";
         font-weight: 800;
         font-size: 5em;
@@ -49,14 +49,25 @@
         text-transform: uppercase;
       }
 
-      .reveal h3 {
+      .reveal h1 {
+        font-size: 5em;
+      }
+
+      .reveal h2 {
         font-size: 2em;
+      }
+
+      .reveal h3 {
+        font-size: 3em;
+      }
+
+      .reveal h4 {
+        font-size: 1.5em;
       }
 
       .reveal h2 {
         font-family: "Lobster Two";
         font-weight: 800;
-        font-size: 2em;
         text-transform: none;
         line-height: 1;
         margin: 0;
@@ -99,6 +110,10 @@
         font-size: 1.5em;
       }
 
+      .red {
+        color: red;
+      }
+
       .blink {
         -webkit-animation: blinker 0.5s linear infinite alternate;
         -moz-animation: blinker 0.5s linear infinite alternate;
@@ -136,9 +151,16 @@
 					<h1>Process Isolation</h1>
 				</section>
 
-				<section>
-          <img width="300" data-src="images/EricSRaymond.jpg">
-					<h3>Unix Philosophy</h3>
+				<section data-background="#ffffff">
+          <section>
+            <img width="250" data-src="images/semaphore.png">
+            <h3>Semaphore CI</h3>
+            <h4>#infra</h4>
+          </section>
+
+          <section>
+            <h3>We <span class="red">❤</span> containers</h3>
+          </section>
 				</section>
 
 				<section>
