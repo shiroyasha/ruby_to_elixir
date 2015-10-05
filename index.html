@@ -6,7 +6,7 @@
 
 		<title>Webhooks</title>
 
-		<meta name="description" content="Webhook presentation">
+		<meta name="description" content="Process isolation presentation">
 		<meta name="author" content="Igor Sarcevic">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -58,12 +58,12 @@
         font-weight: 800;
         font-size: 2em;
         text-transform: none;
-        line-height: 0;
+        line-height: 1;
         margin: 0;
         padding: 0;
         color: orange;
       }
-      
+
       .reveal p.rules {
         font-family: "Yanone Kaffeesatz";
         font-weight: 800;
@@ -104,12 +104,12 @@
         -moz-animation: blinker 0.5s linear infinite alternate;
       }
 
-      @-webkit-keyframes blinker {  
+      @-webkit-keyframes blinker {
           from { opacity: 1; }
             to { opacity: 0; }
       }
 
-      @-moz-keyframes blinker {  
+      @-moz-keyframes blinker {
           from { opacity: 1; }
             to { opacity: 0; }
       }
@@ -132,8 +132,8 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h2>Introduction to</h2>
-					<h1>WebHooks</h1>
+					<h2>The Story of</h2>
+					<h1>Process Isolation</h1>
 				</section>
 
 				<section>
@@ -150,7 +150,7 @@
 				<section class="http-communication" data-background="#ffffff">
           <section>
             <img class="fragment" data-fragment-index="1" width=250 src="images/octocat.png">
-            
+
             <span class="fragment http-pipe blink" data-fragment-index="3">⟻  http  ⟼ </span>
 
             <img class="fragment" data-fragment-index="2" width=200 src="images/semaphore.png">
@@ -158,7 +158,7 @@
 
           <section>
             <img width=250 src="images/octocat.png">
-            
+
             <span class="http-messages"> POST "I have some new commits" </span>
           </section>
 
@@ -182,7 +182,7 @@
 
           <section>
             <img width=250 src="images/octocat.png">
-            
+
             <span class="http-messages"> POST "The commits are merged" </span>
           </section>
 
