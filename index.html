@@ -309,11 +309,19 @@
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				controls: false,
-				progress: false,
+				progress: true,
 				history: false,
 				center: true,
         width: 1200,
         height: 700,
+
+        keyboard: {
+          37: 'prev', // left arrow
+          38: 'prev', // up arrow
+          39: 'next', // right arrow
+          40: 'next', // down arrow
+          13: 'next'  // enter
+        },
 
 				transition: 'slide', // none/fade/slide/convex/concave/zoom
 
