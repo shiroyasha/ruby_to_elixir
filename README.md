@@ -1,13 +1,11 @@
-## Process isolation presentation
+# Presentation about our journey from Ruby to Elixir
 
-## Run
-
-```
-./server
+``` bash
+bash server
 ```
 
 ## License
 
 MIT licensed
 
-Copyright (C) 2015 Igor Sarcevic, http://shiroyasha.github.com
+Copyright (C) 2016 Igor Sarcevic, http://shiroyasha.io
