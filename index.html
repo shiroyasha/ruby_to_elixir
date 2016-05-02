@@ -162,6 +162,63 @@
           <p>sidekiq can use up a lot of resources
           <h2>You need <strong>Inspeqtor</strong></h2>
         </section>
+
+        <section>
+          <p><strong>Another issue</strong></p>
+          <h2>Parralel job creation</h2>
+        </section>
+
+        <section>
+          <h2>Serial job request creation</h2>
+
+          <br>
+
+<pre><code data-trim data-noescape>
+class Build < ActiveRecord::Base
+  has_many :jobs
+end
+</code></pre>
+
+<pre><code data-trim data-noescape>
+build.jobs.map do |job|
+  create_job_request(job)
+end
+</code></pre>
+        </section>
+
+        <section>
+          <img width="700px" src="images/map.png" >
+        </section>
+
+        <section>
+          <h2>Let's use <strong>pmap</strong></h2>
+
+<pre><code data-trim data-noescape>
+build.jobs.<mark>pmap</mark> do |job|
+  create_job_request(job)
+end
+</code></pre>
+        </section>
+
+        <section>
+          <img width="700px" src="images/pmap-slow.png" >
+        </section>
+
+        <section>
+          <img width="100px" src="images/scream.png" >
+          <img width="100px" src="images/scream.png" >
+          <img width="100px" src="images/scream.png" >
+        </section>
+
+        <section>
+          <h2>What we wanted</h2>
+
+          <img width="700px" src="images/pmap-expected.png" >
+        </section>
+
+        <section>
+          it was time to change something
+        </section>
       </div>
 		</div>
 
